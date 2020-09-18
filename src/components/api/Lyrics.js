@@ -35,7 +35,7 @@ function Lyrics(props) {
     return <Spinner />;
   } else {
     return (
-      <div>
+      <div className="container">
         <Link to="/" className="btn btn-dark btn-sm mb-4">
           Go Back
         </Link>

@@ -4,7 +4,7 @@ import Tracks from "../api/Tracks";
 
 function Dashboard() {
   return (
-    <div>
+    <div className="container">
       <Search />
       <Tracks />
     </div>
