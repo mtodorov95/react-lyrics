@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { apiKey } from "../../config/api";
 import Spinner from "../layout/Spinner";
-import Moment from "react-moment";
 
 function Lyrics(props) {
   const [track, setTrack] = useState(null);
   const [lyrics, setLyrics] = useState(null);
-
   useEffect(() => {
     axios
       .get(
@@ -59,12 +57,11 @@ function Lyrics(props) {
             }
           </li>
           <li className="list-group-item">
-            <strong>Explicit words</strong>:{" "}
-            {track.explicit === 0 ? "No" : "Yes"}
+            <strong>Album Name</strong>: {track.album_name}
           </li>
           <li className="list-group-item">
-            <strong>Release Date</strong>:{" "}
-            <Moment format="MM/DD/YYYY">{track.first_release_date}</Moment>
+            <strong>Explicit words</strong>:{" "}
+            {track.explicit === 0 ? "No" : "Yes"}
           </li>
         </ul>
       </div>

@@ -8,6 +8,11 @@ function Provider(props) {
   const [trackList, setTrackList] = useState([]);
   const [heading, setHeading] = useState("Top 10 Tracks");
 
+  const searchTracks = (tracks) => {
+    setTrackList(tracks);
+    setHeading("Search Results");
+  };
+
   useEffect(() => {
     axios
       .get(
@@ -22,7 +27,7 @@ function Provider(props) {
       });
   }, []);
   return (
-    <StateContext.Provider value={{ trackList, heading }}>
+    <StateContext.Provider value={{ trackList, heading, searchTracks }}>
       {props.children}
     </StateContext.Provider>
   );
